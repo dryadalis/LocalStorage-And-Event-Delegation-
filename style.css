@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    background: url("https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=750&q=80") no-repeat center fixed;
+    background: url("https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=685&q=80") no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-backround-size: cover;
@@ -13,27 +13,24 @@ html {
 }
 *, *:before, *:after {box-sizing: inherit; }
 
-svg {
-    fill: white;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 2px;
-    border-radius: 50%;
-    width: 200px;
-    margin-bottom: 50px;
-}
 .wrapper {
     padding: 20px;
     max-width: 350px;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h2 {
     text-align: center;
     margin: 0;
     font-weight: 200;
 }
 .add-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
+
 }
 .add-items input {
     padding: 10px;
@@ -42,9 +39,25 @@ h2 {
     cursor: pointer;
 
 }
+
+.add-items input[type=submit] {
+    width: 52px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 27px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-left: 10px; 
+    color: white;
+    background-color: red;
+}
+.plates {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+}
 .plates li {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    list-style: none;
     padding: 10px 0;
     font-weight: 100;
     display: flex;
@@ -62,5 +75,11 @@ h2 {
 }
 .plates input:checked + label:before {
     content: '🍔';
-
+}
+img:first-child {
+    fill: white;
+    width: 200px;
+    padding: 20px;
+    margin-top: auto;
+    margin-bottom: 25px
 }
