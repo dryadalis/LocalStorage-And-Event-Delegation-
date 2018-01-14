@@ -4,19 +4,20 @@
         <title>Local Tapas</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://use.fontawesome.com/2374ec542f.js"></script>
-        <script src="script.js" defer ></script>
     </head>
     <body>        
         <div class="wrapper">
-            <h1>Local Tapas <i class="fa fa-cutlery fa-2x" aria-hidden="true"></i></h1>
+            <h1>LOCAL TAPAS <i class="fa fa-cutlery" aria-hidden="true"></i></h1>
             <p></p>
             <ul class="plates">
-                <li>Loading Tapas...</li>
+                <li><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+                    <span class="sr-only"></span>Loading Tapas...</li>
             </ul>
             <form class="add-items">
                 <input type="text" name="item" placeholder="Item Name" required>
-                <input type="sumbit" value="+ Add Item">
+                <input type="sumbit" value="+ Add Item" >
             </form>
         </div>
+        <script src="script.js" ></script>
     </body>
 </html>
