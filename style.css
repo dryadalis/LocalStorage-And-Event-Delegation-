@@ -9,7 +9,7 @@ html {
     justify-content: center;
     align-content: center;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Kavivanar;
 }
 *, *:before, *:after {box-sizing: inherit; }
 
@@ -23,7 +23,7 @@ html {
 h2 {
     text-align: center;
     margin: 0;
-    font-weight: 200;
+    font-weight: 150;
 }
 .add-items {
     display: flex;
@@ -36,8 +36,7 @@ h2 {
     padding: 10px;
     outline: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-
+    cursor: text;
 }
 
 .add-items input[type=submit] {
@@ -48,7 +47,8 @@ h2 {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-left: 10px; 
     color: white;
-    background-color: red;
+    background-color: #cc0000;
+    cursor: pointer;
 }
 .plates {
     margin: 0;
@@ -77,9 +77,25 @@ h2 {
     content: '🍔';
 }
 img:first-child {
-    fill: white;
     width: 200px;
     padding: 20px;
     margin-top: auto;
     margin-bottom: 25px
+}
+.clearAllButton {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    cursor: pointer;
+}
+.checkAllButton {
+    
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: green;
+}
+.loading {
+    font-size: 20px;
+    color: #cc0000;
+    font-family: Kavivanar;
 }

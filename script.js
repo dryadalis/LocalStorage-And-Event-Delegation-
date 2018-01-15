@@ -1,6 +1,8 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
 const items = JSON.parse(localStorage.getItem('items')) || []; 
+const clearAllButton = document.querySelector('.clearAllButton');
+const checkAllButton = document.querySelector('.checkAllButton');
 
 
 
@@ -26,6 +28,13 @@ function populateList(plates = [], platesList) {
         </li>
       `;
     }).join('');
+    if (plates.length == 0) {
+        const loading = document.createElement("p");
+        loading.innerHTML = "Loading Tapas... "
+        loading.classList.add("loading")
+        document.querySelector('.loading').appendChild(loading);
+       
+    }
   }
 
   function toggleDone(e) {
@@ -37,8 +46,22 @@ function populateList(plates = [], platesList) {
     populateList(items, itemsList)
   }
 
+function clearAll(e) {
+    e.preventDefault();
+    items.splice(0);
+    populateList(items, itemsList);
+    localStorage.setItem('items', JSON.stringify(items));
+}
+
+function checkAll(e) {
+    e.preventDefault();
+}
+
+
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
+clearAllButton.addEventListener('click', clearAll);
+checkAllButton.addEventListener('click', checkAll);
 populateList(items, itemsList)
 
 

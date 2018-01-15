@@ -3,19 +3,23 @@
         <meta charset="UTF-8">
         <title>Local Tapas</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://use.fontawesome.com/2374ec542f.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
     </head>
     <body>        
-        <img src="C:\Users\Karolina\Desktop\Programowanie\LocalStorage-And-Event-Delegation-\burger.img.png">
+        <img src="https://user-images.githubusercontent.com/33570812/34921133-3c19bab6-f97e-11e7-9c73-f86ea9890105.png">
         <div class="wrapper">
             <h1>LOCAL TAPAS </h1>
-            <p></p>
+            <p class="loading"></p>
             <ul class="plates">
-                <li>Loading Tapas...</li>
+                <li>Loading tapas...</li>
             </ul>
             <form class="add-items">
                 <input type="text" name="item" placeholder="Item Name" required>
                 <input type="submit" value="+">
             </form>
+            <button type="button" class="clearAllButton" title="Clear all!"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+            <button type="button" class="checkAllButton" title="Sellect all!"><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
         </div>
         <script src="script.js" ></script>
     </body>
