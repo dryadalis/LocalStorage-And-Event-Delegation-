@@ -53,17 +53,21 @@ function clearAll(e) {
     localStorage.setItem('items', JSON.stringify(items));
 }
 
-function checkAll(e) {
-    e.preventDefault();
-    const inputs = document.querySelectorAll("input[type='checkbox']");
-    inputs.forEach(input => {
-        input.checked = true;
-    });
+function toggleAll(e) {
+    let inputs = document.querySelectorAll("input[type='checkbox']");
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked == false) {
+            inputs[i].checked = true;
+        } else if (inputs[i].checked == true) {
+            inputs[i].checked = false;
+        }
+    populateList(items, itemsList);
+    }
 }
 
 
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 clearAllButton.addEventListener('click', clearAll);
-checkAllButton.addEventListener('click', checkAll);
-populateList(items, itemsList)
+checkAllButton.addEventListener('click', toggleAll);
+populateList(items, itemsList);
