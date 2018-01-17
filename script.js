@@ -37,6 +37,7 @@ function populateList(plates = [], platesList) {
     }
 }
 
+
 function toggleDone(e) {
     if (!e.target.matches('input')) return; // skip this unless it's an input
     const el = e.target;
@@ -54,17 +55,15 @@ function clearAll(e) {
 }
 
 function toggleAll(e) {
-    let inputs = document.querySelectorAll("input[type='checkbox']");
-    for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].checked == false) {
-            inputs[i].checked = true;
-        } else if (inputs[i].checked == true) {
-            inputs[i].checked = false;
-        }
-    populateList(items, itemsList);
+    const inputs = document.querySelectorAll("input[type='checkbox']");
+    inputs.forEach(input => {
+        if(input.checked == false){
+            input.checked = true; 
+        } else if (input.checked == true) {
+                input.checked = false;
+            }
+    });
     }
-}
-
 
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
