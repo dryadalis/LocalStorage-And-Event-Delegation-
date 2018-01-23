@@ -1,11 +1,12 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
-const items = JSON.parse(localStorage.getItem('items')) || [];
+// const items = JSON.parse(localStorage.getItem('items')) || [];
 const clearAllButton = document.querySelector('.clearAllButton');
 const checkAllButton = document.querySelector('.checkAllButton');
+const uncheckAllButton = document.querySelector('.uncheckAllButton');
 
 
-
+let items = JSON.parse(localStorage.getItem('items')) || [];
 function addItem(e) {
     e.preventDefault();
     const text = this.querySelector(('[name=item]')).value;
@@ -28,13 +29,18 @@ function populateList(plates = [], platesList) {
         </li>
       `;
     }).join('');
-    if (plates.length == 0) {
-        const loading = document.createElement("p");
-        loading.innerHTML = "Loading Tapas... "
-        loading.classList.add("loading")
-        document.querySelector('.loading').appendChild(loading);
+}
 
-    }
+function checkAll () {
+    items.map(item => item.done = true);
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList)
+}
+
+function uncheckAll () {
+    items.map(item => item.done = false);
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList)
 }
 
 
@@ -54,19 +60,9 @@ function clearAll(e) {
     localStorage.setItem('items', JSON.stringify(items));
 }
 
-function toggleAll(e) {
-    const inputs = document.querySelectorAll("input[type='checkbox']");
-    inputs.forEach(input => {
-        if(input.checked == false){
-            input.checked = true; 
-        } else if (input.checked == true) {
-                input.checked = false;
-            }
-    });
-    }
-
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 clearAllButton.addEventListener('click', clearAll);
-checkAllButton.addEventListener('click', toggleAll);
+checkAllButton.addEventListener('click', checkAll);
+uncheckAllButton.addEventListener('click', uncheckAll);
 populateList(items, itemsList);

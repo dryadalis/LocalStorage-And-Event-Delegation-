@@ -10,6 +10,7 @@ html {
     align-content: center;
     text-align: center;
     font-family: Kavivanar;
+    margin-bottom: 50px;
 }
 *, *:before, *:after {box-sizing: inherit; }
 
@@ -100,7 +101,7 @@ img:first-child {
     font-family: Kavivanar;
 }
 footer {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
@@ -108,4 +109,11 @@ footer {
     margin: 15px;
     font-size: 12px; 
     font-family: Kavivanar;
+    height: 50px;
+}
+.uncheckAllButton{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: red;
 }
